@@ -16,12 +16,18 @@ public class Hangman {
     List<String> list = new ArrayList<>();
     Random random = new Random();
 
+    String wordFile;
+
     public Hangman(String wordFile) {
+        this.wordFile = wordFile;
+    }
+
+    public void startGame() {
 
         wordList = fileProcessor.readLine(wordFile);
         int index = random.nextInt(wordList.size() + 1);
         String word = wordList.get(index);
-        
+
         System.out.println("Ready to play hangman?");
         System.out.println("Here you go, Best Luck!");
         System.out.print("\n");
@@ -45,6 +51,7 @@ public class Hangman {
 
             if (word.contains(guess)) {
                 System.out.println("Right match");
+                System.out.print("\n");
                 list.set(word.indexOf(guess), guess);
             } else {
                 System.out.println("Wrong guess!");
