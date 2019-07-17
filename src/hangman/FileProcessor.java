@@ -11,12 +11,6 @@ import java.util.List;
  */
 public class FileProcessor {
 
-    /**
-     * This method reads line from file
-     *
-     * @param fileName
-     * @return
-     */
     public List readLine(String fileName) {
 
         List<String> list = new LinkedList<>();
